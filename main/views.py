@@ -7,9 +7,7 @@ from main.functions import mskf
 from random import choice
 
 # Models
-from main.models import Person,\
-                        Post,\
-                        Ad
+from main.models import Person,Post,Ad
 
 
 # Index view
@@ -55,7 +53,7 @@ def index(request):
 
 
 # Posts page view
-def posts(request, page):
+def posts(request, page:list):
     # Try to load authenticated user
     try:
         person = get_object_or_404(Person, username=request.user.username)
